@@ -1,7 +1,7 @@
 // Write your JavaScript here
 calculateChange = (due, given) => {
 
-    let change = due.toFixed(2)-given.toFixed(2);
+    let change = given.toFixed(2)-due.toFixed(2);
     let dollars, quarters, dimes, nickels, pennies, remainder;
     
     dollars = Math.floor(change/1);
@@ -26,7 +26,7 @@ runCalculation = () => {
     let due = parseFloat(document.getElementById('amount-due').value); 
     let given = parseFloat(document.getElementById('amount-received').value);
 
-    if (isNaN(due || given) || due.length == 0 || given.length == 0 || given > due ) {
+    if (isNaN(due || given) || due.length == 0 || given.length == 0 || given < due ) {
         document.getElementById('amount-due').value = "";
         document.getElementById('amount-received').value = "";
         alert("Check your inpputs");
